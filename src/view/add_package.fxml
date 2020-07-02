@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import main.*?> 
+
+
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.PersonController">
+    <children>
+        <VBox>
+            <children>
+                <Label fx:id="heading" text="Add New Package"/>
+                <Label text=""/>
+                <HBox fillHeight="true" >
+                    <children>
+                        <Label text="Speed  "/> 
+                        <ToggleButton fx:id="two" mnemonicParsing="false" text="2 Mbit">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="speed"/>
+                            </toggleGroup>              
+                        </ToggleButton>                   
+                        <ToggleButton fx:id="five" mnemonicParsing="false" text="5 Mbit" toggleGroup="$speed" />
+                        <ToggleButton fx:id="ten" mnemonicParsing="false" text="10 Mbit" toggleGroup="$speed" />
+                        <ToggleButton fx:id="twenty" mnemonicParsing="false" text="20 Mbit" toggleGroup="$speed" />
+                        <ToggleButton fx:id="fifty" mnemonicParsing="false" text="50 Mbit" toggleGroup="$speed" />
+                        <ToggleButton fx:id="hundred" mnemonicParsing="false" text="100 Mbit" toggleGroup="$speed" />
+                    </children>
+                </HBox> 
+                <HBox fillHeight="true" >
+                    <children>
+                        <Label text="Flow  "/> 
+                        <ToggleButton fx:id="one" mnemonicParsing="false" text="1 GB">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="flow"/>
+                            </toggleGroup>              
+                        </ToggleButton>                   
+                        <ToggleButton fx:id="fiveF" mnemonicParsing="false" text="5 GB" toggleGroup="$flow" />
+                        <ToggleButton fx:id="tenF" mnemonicParsing="false" text="10 GB" toggleGroup="$flow" />
+                        <ToggleButton fx:id="hundredF" mnemonicParsing="false" text="100 GB" toggleGroup="$flow" />
+                        <ToggleButton fx:id="flat" mnemonicParsing="false" text="Flat" toggleGroup="$flow" />
+                    </children>
+                </HBox>
+                <HBox fillHeight="true" >
+                    <children>
+                        <Label text="Duration of contract  "/> 
+                        <ToggleButton fx:id="oneYear" mnemonicParsing="false" text="One year">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="duration"/>
+                            </toggleGroup>              
+                        </ToggleButton>                   
+                        <ToggleButton fx:id="twoYear" mnemonicParsing="false" text="Two years" toggleGroup="$duration" />
+                    </children>
+                </HBox>      
+                <HBox fillHeight="true" >
+                    <children> 
+                        <TextField fx:id="firstName"  promptText="First name" />
+                        <TextField fx:id="lastName"  promptText="Last name" />
+                        <TextField fx:id="address"  promptText="Address" />
+                    </children>
+                </HBox>
+                <HBox alignment="TOP_RIGHT">
+                    <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#savePerson" text="Save" />
+                        <Button fx:id="clearBtn" mnemonicParsing="false" onAction="#clearPerson" text="Clear" />
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deletePerson" text="Delete" />
+                    </children>
+                </HBox>                                    
+            
+            <Pane>
+            <TableView fx:id="table">
+                <columns>
+                    <TableColumn text="Speed">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="speed" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Flow">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="flow" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Duration">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="duration" />
+                        </cellValueFactory>                        
+                    </TableColumn>
+                    <TableColumn text="ID">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="numberIdentification" />
+                        </cellValueFactory>                        
+                    </TableColumn>
+                    <TableColumn text="firstName">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="firstName" />
+                        </cellValueFactory>                        
+                    </TableColumn>
+                    <TableColumn text="lastName">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="lastName" />
+                        </cellValueFactory>                        
+                    </TableColumn>
+                    <TableColumn text="address">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="address" />
+                        </cellValueFactory>                        
+                    </TableColumn>
+                </columns>
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        
+                    </FXCollections>
+                </items>
+            </TableView>
+        </Pane>
+        </children>
+        </VBox>
+    </children>
+</HBox>

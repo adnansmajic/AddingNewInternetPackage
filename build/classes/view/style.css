@@ -1,0 +1,31 @@
+.root {
+    -fx-background-color: #F0F8FF;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.button:hover {
+    -fx-background-color: #008B8B;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+ToggleButton:hover {
+    -fx-cursor: hand;
+    -fx-font-family: "serif";
+    -fx-background-color: #008B8B;
+}
+#deleteBtn {
+    -fx-text-fill: red;
+}
+TextField:hover {
+    -fx-background-color:#008B8B;
+}
+TableView {
+    -fx-background-color:#A9A9A9;
+}
+#heading {
+    -fx-font-size: 50px;
+    -fx-font-weight: bolder;
+    -fx-background-color: #00FFFF;
+    
+}
